@@ -22,33 +22,27 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style3.css" />
 </head>
 
 <body>
     <header>
-
         <div class="logo">
             <img src="images/logo-min.png" alt="Logo">
-            <nav>
-                <div class="tab-group">
-                    <button class="tab-btn active" data-tab="about">Home</button>
-                    <button class="tab-btn" data-tab="projects">Products</button>
-                    <button class="tab-btn" data-tab="contact">Contact</button>
-                    <!-- <button class="quote-btn" onclick="openModal()">Get Quote</button>-->
-                    <a href="https://wa.me/919146193300" target="_blank" class="quote-btn">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-
-                </div>
-            </nav>
+            <div class="menu-toggle" id="mobile-menu"></div>
         </div>
 
-
+        <nav>
+            <div class="tab-group" id="nav-links">
+                <button class="tab-btn active" data-tab="about">Home</button>
+                <button class="tab-btn" data-tab="projects">Products</button>
+                <button class="tab-btn" data-tab="contact">Contact</button>
+                <a href="https://wa.me/919146193300" target="_blank" class="quote-btn" style="text-align: right;">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </nav>
     </header>
-
-
-    <!-- Home Tab Content -->
     <section id="about" class="tab-content active">
         <section class="hero">
             <h2>Shine Brighter with Smart LED Technology</h2>
@@ -63,21 +57,6 @@
                 specification and under expert supervision.
             </p>
         </div>
-
-
-
-        <!-- <div class="applications-section" data-aos="fade-up">
-            <h2>Applications</h2>
-            <ul>
-                <li>Open Arena Court (Outdoor)</li>
-                <li>Commercial use</li>
-                <li>Construction site</li>
-                <li>Street, Roadway, Highway</li>
-                <li>Stadium/Sport Ground</li>
-                <li>Industrial use</li>
-            </ul>
-        </div>-->
- 
         <h2 style="text-align: center;">Explore our products</h2>
 
         <div class="grid">
@@ -143,18 +122,6 @@
 
     <!-- Products Tab Content -->
     <section id="projects" class="tab-content">
-
-        <!--  <div class="card">
-                <a href="street.jpg" data-lightbox="products" data-title="Street Lights">
-                    <img src="street.jpg" height="100px" alt="Street Lights">
-                </a>
-                <h3>LED Flood Light</h3>
-                <p>Energy-efficient lighting for your home or office.</p>
-            </div>-->
-        <!-- Make sure to include Font Awesome in your <head> for icons -->
-        <!-- Example: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
-
-        <!-- Image opens in Lightbox -->
         <a href="floodlight.html" class="product-link">
             <div class="simple-product">
                 <img src="images/floodled.jpg" alt="Flood Light">
@@ -203,16 +170,6 @@
 
 
     <!-- Contact Tab Content -->
-
-    <!--<section id="contact" class="tab-content">
-        <div>
-            <img src="ledlights.jpg" width="500px">
-        </div>
-        <h3>Contact Us</h3>
-        <p>Email: asvisales51@gmail.com</p>
-        <p>Phone: +91 9146193300</p>
-        <p>Address: Plot no 51, New Timber Market, Pune - 411042</p>
-    </section>-->
     <section id="contact" class="tab-content">
         <div class="image-overlay-container">
             <img src="images/ledlights.jpg" alt="LED Lights" class="overlay-background">
@@ -226,6 +183,14 @@
             <p>Email: <a href="mailto:asvisales51@gmail.com">asvisales51@gmail.com</a></p>
             <p>Phone: <a href="tel:+919146193300">+91 9146193300</a></p>
             <p>Address: Plot no 51, New Timber Market, Pune - 411042</p>
+            <div class="certifications">
+                <h3>Our Certification</h3>
+                <ul>
+                    <li><strong>ISO 9001:2015 standards</strong> – Quality Management System</li>
+                    <li><strong>BIS Certified</strong> – Registered Trademark</li>
+
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -234,20 +199,17 @@
         <p>&copy; 2025 LED Light Co. | All rights reserved</p>
     </footer>
 
-    <!-- AOS Init -->
-    <script>
-        AOS.init();
-    </script>
+
+
+    <!-- Rest of the original body remains unchanged -->
+
     <script>
         AOS.init({
-            duration: 1000, // 1 second animation
-            offset: 120, // trigger offset
-            once: true // only animate once
+            duration: 1000,
+            offset: 120,
+            once: true
         });
-    </script>
 
-    <!-- Tab Switch Script -->
-    <script>
         const buttons = document.querySelectorAll('.tab-btn');
         const contents = document.querySelectorAll('.tab-content');
 
@@ -266,55 +228,25 @@
                 const tabId = button.dataset.tab;
                 history.pushState(null, '', `#${tabId}`);
                 switchTab(tabId);
+                document.getElementById('nav-links').classList.remove('show');
             });
         });
 
-        // Handle direct link or back/forward navigation
         window.addEventListener('popstate', () => {
             const hash = window.location.hash.replace('#', '') || 'about';
             switchTab(hash);
         });
 
-        // On initial page load
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash.replace('#', '') || 'about';
             switchTab(hash);
         });
+
+        // Hamburger toggle
+        document.getElementById('mobile-menu').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('show');
+        });
     </script>
-
 </body>
-<div id="quoteModal" class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Request a Quote</h2>
-        <form action="https://formsubmit.co/dishashah010794@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="What lighting do you need?" required></textarea>
-            <input type="hidden" name="_subject" value="New Quote Request">
-            <input type="hidden" name="_template" value="box">
-            <button type="submit">Send Request</button>
-        </form>
-
-    </div>
-</div>
-<script>
-    function openModal() {
-        document.getElementById("quoteModal").style.display = "flex";
-    }
-
-    function closeModal() {
-        document.getElementById("quoteModal").style.display = "none";
-    }
-
-    // Close when clicking outside modal
-    window.onclick = function(e) {
-        const modal = document.getElementById("quoteModal");
-        if (e.target == modal) {
-            modal.style.display = "none";
-        }
-    };
-</script>
-
 
 </html>
