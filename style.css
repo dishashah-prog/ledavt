@@ -1,70 +1,29 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+    color: #111827;
+}
+
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: #0c4a6e;
-    padding: 1rem;
-    color: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 999;
+    background: #1f2937;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
 }
 
 .logo {
     display: flex;
-    align-items: center;
-    gap: 1rem;
     justify-content: center;
+    align-items: centre;
     margin-top: 1rem;
 }
 
 .logo img {
-    height: 40px;
-}
-
-.tab-group {
-    display: flex;
-    gap: 0.8rem;
-}
-
-.tab-btn,
-.quote-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .tab-group {
-        display: none;
-        flex-direction: column;
-        background-color: #0c4a6e;
-        position: absolute;
-        top: 70px;
-        right: 1rem;
-        width: 200px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .tab-group.show {
-        display: flex;
-    }
-    .menu-toggle {
-        display: block;
-        color: white;
-    }
+    margin-right: 2rem;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
 }
 
 nav .tab-group {
@@ -141,12 +100,12 @@ nav button.active {
     background-color: #4ade80;
     color: #fff;
     border: none;
-    padding: 0.4rem 1.2rem;
+    padding: 0.6rem 1.2rem;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 8px;
     cursor: pointer;
-    margin-left: 0.3rem;
+    margin-left: 1rem;
     transition: background-color 0.3s ease;
 }
 
@@ -223,7 +182,7 @@ nav button.active {
 }
 
 .intro-section {
-    background: #457bb1;
+    background: #0c4a6e;
     border-left: 6px solid #4ade80;
     padding: 2rem;
     border-radius: 12px;
@@ -232,7 +191,7 @@ nav button.active {
 }
 
 .intro-section h2 {
-    color: #080808;
+    color: #e5e753;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -448,29 +407,6 @@ nav button.active {
 .contact-details {
     text-align: center;
     padding: 2rem;
-}
-
-.certifications {
-    margin-top: 2rem;
-    background: #f8fafc;
-    padding: 1rem;
-    border-radius: 8px;
-}
-
-.certifications h3 {
-    margin-bottom: 0.5rem;
-    color: #0f172a;
-}
-
-.certifications ul {
-    margin: 0 0 1rem 1.5rem;
-}
-
-.cert-img {
-    max-width: 150px;
-    margin: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 footer {
